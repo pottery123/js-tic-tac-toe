@@ -24,11 +24,11 @@ TicTacToe.prototype.play = function(score){// all thing that happen when player 
     this.turn += 1
   if(this.turn %2 == 0){
     var player2  = this.player_2_score.push(score)
-    return player2
+    this.won()
   }else{
 
     var player1 =  this.player_1_score.push(score)
-    return player1
+    this.won()
   }
 }
 
@@ -40,9 +40,24 @@ TicTacToe.prototype.currentPlayer = function(){
   }
 }
 
- // TicTacToe.prototype.won = function(arrayScore){
- //   for (variable in object)
- // }
+
+TicTacToe.prototype.won = function(){
+  for (scoreArray in this.winnerArray){
+    if(this.player_2_score.toString() === this.winnerArray[scoreArray].toString()){
+      this.reset()
+    }else if (this.player_1_score.toString() === this.winnerArray[scoreArray].toString()) {
+      this.reset()
+    }
+
+  }
+}
+
+TicTacToe.prototype.reset = function(){
+  this.turn = 0
+  this.player_1_score = []
+  this.player_2_score = []
+
+}
 
 
 
@@ -54,39 +69,39 @@ TicTacToe.prototype.currentPlayer = function(){
 
 TicTacToe.prototype.score1 = function(){
   return this.scores[0]
-}
+  }
 
 TicTacToe.prototype.score2 = function(){
   return this.scores[1]
-}
+  }
 
 TicTacToe.prototype.score3 = function(){
   return this.scores[2]
-}
+  }
 
 TicTacToe.prototype.score4 = function(){
   return this.scores[3]
-}
+  }
 
 TicTacToe.prototype.score5 = function(){
   return this.scores[4]
-}
+  }
 
 TicTacToe.prototype.score6 = function(){
   return this.scores[5]
-}
+  }
 
 TicTacToe.prototype.score7 = function(){
   return this.scores[6]
-}
+  }
 
 TicTacToe.prototype.score8 = function(){
   return this.scores[7]
-}
+  }
 
 TicTacToe.prototype.score9 = function(){
   return this.scores[8]
-}
+  }
 
 
 
@@ -104,14 +119,16 @@ var ticTactoe = new TicTacToe()
 
   $("button.square_1").one('click', function(event){
     $(this).addClass('red');
-    ticTactoe.play(ticTactoe.score1())
+  ticTactoe.play(ticTactoe.score1())
+
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_2").one('click', function(event){
       $(this).addClass('red');
 
-      ticTactoe.play(ticTactoe.score2())
+    ticTactoe.play(ticTactoe.score2())
+
       console.log(ticTactoe.currentPlayer())
 
   })
@@ -119,42 +136,49 @@ var ticTactoe = new TicTacToe()
   $("button.square_3").one('click', function(event){
     $(this).addClass('red');
     ticTactoe.play(ticTactoe.score3())
+
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_4").one('click', function(event){
     $(this).addClass('red');
     ticTactoe.play(ticTactoe.score4())
+
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_5").one('click', function(event){
     $(this).addClass('red');
     ticTactoe.play(ticTactoe.score5())
+
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_6").one('click', function(event){
     $(this).addClass('red');
-    ticTactoe.play(ticTactoe.score6())
+  ticTactoe.play(ticTactoe.score6())
+
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_7").one('click', function(event){
     $(this).addClass('red');
     ticTactoe.play(ticTactoe.score7())
+
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_8").one('click', function(event){
     $(this).addClass('red');
     ticTactoe.play(ticTactoe.score8())
+
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_9").one('click', function(event){
     $(this).addClass('red');
     ticTactoe.play(ticTactoe.score9())
+
     console.log(ticTactoe.currentPlayer())
 
   })
