@@ -4,7 +4,7 @@ function TicTacToe(callback) {
   this.player_2_score = []
 
   this.scores = [1,2,3,4,5,6,7,8,9]
-  this.winnerArray = {
+  this.winnerObject = {
     a:[1,2,3],
     b:[4,5,6],
     c:[7,8,9],
@@ -21,7 +21,6 @@ function TicTacToe(callback) {
 }
 
 TicTacToe.prototype.play = function(score){// all thing that happen when player plays
-    this.turn += 1
   if(this.turn %2 == 0){
     var player2  = this.player_2_score.push(score)
     this.won()
@@ -30,22 +29,23 @@ TicTacToe.prototype.play = function(score){// all thing that happen when player 
     var player1 =  this.player_1_score.push(score)
     this.won()
   }
+  this.turn += 1
 }
 
 TicTacToe.prototype.currentPlayer = function(){
   if(this.turn %2 == 0){
-    return this.player_2_score
-  }else{
     return this.player_1_score
+  }else{
+    return this.player_2_score
   }
 }
 
 
 TicTacToe.prototype.won = function(){
-  for (scoreArray in this.winnerArray){
-    if(this.player_2_score.toString() === this.winnerArray[scoreArray].toString()){
+  for (scoreArray in this.winnerObject){
+    if(this.player_2_score.includes(this.winnerObject[scoreArray][0]) && this.player_2_score.includes(this.winnerObject[scoreArray][1]) && this.player_2_score.includes(this.winnerObject[scoreArray][2])){
       this.reset()
-    }else if (this.player_1_score.toString() === this.winnerArray[scoreArray].toString()) {
+    }else if(this.player_1_score.includes(this.winnerObject[scoreArray][0]) && this.player_1_score.includes(this.winnerObject[scoreArray][1]) && this.player_1_score.includes(this.winnerObject[scoreArray][2])){
       this.reset()
     }
 
@@ -56,6 +56,17 @@ TicTacToe.prototype.reset = function(){
   this.turn = 0
   this.player_1_score = []
   this.player_2_score = []
+
+}
+
+TicTacToe.prototype.playerColor = function(){
+  if(this.currentPlayer() == this.player_1_score){
+    return 'red'
+
+  }else if(this.currentPlayer() == this.player_2_score) {
+      return 'blue'
+  }
+
 
 }
 
@@ -117,68 +128,60 @@ $(document).ready( function() {
 
 var ticTactoe = new TicTacToe()
 
-  $("button.square_1").one('click', function(event){
-    $(this).addClass('red');
-  ticTactoe.play(ticTactoe.score1())
 
+
+  $("button.square_1").one('click', function(event){
+    ticTactoe.play(ticTactoe.score1())
+    $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_2").one('click', function(event){
-      $(this).addClass('red');
-
-    ticTactoe.play(ticTactoe.score2())
-
+      ticTactoe.play(ticTactoe.score2())
+      $(this).addClass(ticTactoe.playerColor())
       console.log(ticTactoe.currentPlayer())
 
   })
 
   $("button.square_3").one('click', function(event){
-    $(this).addClass('red');
-    ticTactoe.play(ticTactoe.score3())
-
-    console.log(ticTactoe.currentPlayer())
+      ticTactoe.play(ticTactoe.score3())
+      $(this).addClass(ticTactoe.playerColor())
+      console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_4").one('click', function(event){
-    $(this).addClass('red');
     ticTactoe.play(ticTactoe.score4())
-
+    $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_5").one('click', function(event){
-    $(this).addClass('red');
     ticTactoe.play(ticTactoe.score5())
-
+    $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_6").one('click', function(event){
-    $(this).addClass('red');
-  ticTactoe.play(ticTactoe.score6())
-
+    ticTactoe.play(ticTactoe.score6())
+    $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_7").one('click', function(event){
-    $(this).addClass('red');
     ticTactoe.play(ticTactoe.score7())
-
+    $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_8").one('click', function(event){
-    $(this).addClass('red');
     ticTactoe.play(ticTactoe.score8())
-
+    $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
   $("button.square_9").one('click', function(event){
-    $(this).addClass('red');
     ticTactoe.play(ticTactoe.score9())
-
+    $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
 
   })
