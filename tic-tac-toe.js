@@ -56,6 +56,7 @@ TicTacToe.prototype.reset = function(){
   this.turn = 0
   this.player_1_score = []
   this.player_2_score = []
+  alert("you won!")
 
 }
 
