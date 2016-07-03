@@ -131,56 +131,56 @@ var ticTactoe = new TicTacToe()
 
 
 
-  $("button.square_1").one('click', function(event){
+  $("td.square_1").one('click', function(event){
     ticTactoe.play(ticTactoe.score1())
     $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
-  $("button.square_2").one('click', function(event){
+  $("td.square_2").one('click', function(event){
       ticTactoe.play(ticTactoe.score2())
       $(this).addClass(ticTactoe.playerColor())
       console.log(ticTactoe.currentPlayer())
 
   })
 
-  $("button.square_3").one('click', function(event){
+  $("td.square_3").one('click', function(event){
       ticTactoe.play(ticTactoe.score3())
       $(this).addClass(ticTactoe.playerColor())
       console.log(ticTactoe.currentPlayer())
   })
 
-  $("button.square_4").one('click', function(event){
+  $("td.square_4").one('click', function(event){
     ticTactoe.play(ticTactoe.score4())
     $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
-  $("button.square_5").one('click', function(event){
+  $("td.square_5").one('click', function(event){
     ticTactoe.play(ticTactoe.score5())
     $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
-  $("button.square_6").one('click', function(event){
+  $("td.square_6").one('click', function(event){
     ticTactoe.play(ticTactoe.score6())
     $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
-  $("button.square_7").one('click', function(event){
+  $("td.square_7").one('click', function(event){
     ticTactoe.play(ticTactoe.score7())
     $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
-  $("button.square_8").one('click', function(event){
+  $("td.square_8").one('click', function(event){
     ticTactoe.play(ticTactoe.score8())
     $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
   })
 
-  $("button.square_9").one('click', function(event){
+  $("td.square_9").one('click', function(event){
     ticTactoe.play(ticTactoe.score9())
     $(this).addClass(ticTactoe.playerColor())
     console.log(ticTactoe.currentPlayer())
