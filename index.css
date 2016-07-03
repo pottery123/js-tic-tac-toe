@@ -12,6 +12,8 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+
+
   }
 
 
@@ -108,9 +110,12 @@ body {
       font-size: 16px;
     }
 
-    table
-{
+    table {
     border-collapse: collapse;
+    font-size: 62.5%;
+    font-family: Verdana;
+
+
 }
 
 
@@ -141,6 +146,9 @@ body {
       background-position: center;
       transition: all .3s ease-in;
 
+
+
+
     }
 
     .blue{
@@ -149,4 +157,5 @@ body {
       background-repeat: no-repeat;
       background-position: center;
       transition: all .3s ease-in;
+
     }
